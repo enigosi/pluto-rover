@@ -69,4 +69,89 @@ describe('Pluto Rover', function() {
 
 	});
 
+
+	describe('Rover can make basic moves', function() {
+
+		it('it should be able to move forward facing N', function() {
+
+			Rover.getCommands('F');
+			var position = Rover.reportPosition();
+
+			expect(position.y).toBe(1);
+			expect(position.x).toBe(0);
+
+		})
+		it('it should be able to move backward facing N', function() {
+
+			Rover.getCommands('B');
+			var position = Rover.reportPosition();
+
+			expect(position.y).toBe(-1);
+			expect(position.x).toBe(0);
+
+		})
+
+
+		it('it should be able to move forward facing E', function() {
+
+			Rover.getCommands('RF');
+			var position = Rover.reportPosition();
+
+			expect(position.y).toBe(0);
+			expect(position.x).toBe(1);
+
+		})
+		it('it should be able to move backward facing E', function() {
+
+			Rover.getCommands('RB');
+			var position = Rover.reportPosition();
+
+			expect(position.y).toBe(0);
+			expect(position.x).toBe(-1);
+
+		})
+
+
+		it('it should be able to move forward facing S', function() {
+
+			Rover.getCommands('LLF');
+			var position = Rover.reportPosition();
+
+			expect(position.y).toBe(-1);
+			expect(position.x).toBe(0);
+
+		})
+		it('it should be able to move backward facing S', function() {
+
+			Rover.getCommands('RRB');
+			var position = Rover.reportPosition();
+
+			expect(position.y).toBe(1);
+			expect(position.x).toBe(0);
+
+		})
+
+
+		it('it should be able to move backward facing W', function() {
+
+			Rover.getCommands('LB');
+			var position = Rover.reportPosition();
+
+			expect(position.y).toBe(0);
+			expect(position.x).toBe(-1);
+
+		})
+		it('it should be able to move forward facing W', function() {
+
+			Rover.getCommands('LF');
+			var position = Rover.reportPosition();
+
+			expect(position.y).toBe(0);
+			expect(position.x).toBe(1);
+
+		})
+
+
+	});
+
 })
