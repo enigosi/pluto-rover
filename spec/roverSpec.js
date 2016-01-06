@@ -117,7 +117,7 @@ describe('Pluto Rover', function() {
 			Rover.getCommands('LLF');
 			var position = Rover.reportPosition();
 
-			expect(position.y).toBe(-1);
+			expect(position.y).toBe(1);
 			expect(position.x).toBe(0);
 
 		})
@@ -126,7 +126,7 @@ describe('Pluto Rover', function() {
 			Rover.getCommands('RRB');
 			var position = Rover.reportPosition();
 
-			expect(position.y).toBe(1);
+			expect(position.y).toBe(-1);
 			expect(position.x).toBe(0);
 
 		})
