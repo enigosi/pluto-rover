@@ -54,6 +54,10 @@ var Rover = (function() {
 
 	function move(command) {
 
-	}
+		var axis = ['N', 'S'].indexOf(position.d) === -1 ? 'x' : 'y';
 
+		var direction = command === 'F' ? 1 : -1;
+
+		position[axis] += direction;
+	}
 })();
