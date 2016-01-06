@@ -1,7 +1,7 @@
 describe('Pluto Rover', function() {
 
 	beforeEach(function() {
-		Rover.init();
+		Rover.land();
 	})
 
 	describe('Rover initialize in the correct way', function() {
