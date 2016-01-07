@@ -206,5 +206,19 @@ describe('Pluto Rover', function() {
 
 		})
 
+		describe('Rover can filter correct commands', function() {
+
+			it('it should execute only correct commands', function() {
+
+				var commandRaport = Rover.getCommands('FFBAR');
+				expect(commandRaport).toBe(false);
+
+				commandRaport = Rover.getCommands(null);
+				expect(commandRaport).toBe(false);
+
+			})
+
+		});
+
 	});
 })
