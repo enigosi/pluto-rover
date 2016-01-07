@@ -21,9 +21,20 @@ describe('Pluto Rover', function() {
 			Rover.land(101, 99, 'S')
 			var position = Rover.reportPosition();
 
-			expect(position.x).toBe(101);
+			expect(position.x).toBe(1);
 			expect(position.y).toBe(99);
 			expect(position.d).toBe('S');
+
+		});
+
+		it("when landing position is not correct it should use default one", function() {
+
+			Rover.land(99, 124, 'G')
+			var position = Rover.reportPosition();
+
+			expect(position.x).toBe(99);
+			expect(position.y).toBe(0);
+			expect(position.d).toBe('N');
 
 		});
 
