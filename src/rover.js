@@ -1,6 +1,6 @@
-'use strict';
-
 var Rover = (function() {
+
+	'use strict';
 
 	// current position
 	var position;
@@ -12,20 +12,20 @@ var Rover = (function() {
 		land: init,
 		reportPosition: reportPosition,
 		getCommands: getCommands
-	}
+	};
 
 
-	function init(x, y, direction) {
+	function init(xPosition, yPosition, direction) {
 
-		var direction = directions.indexOf(direction) === -1 ? 'N' : direction;
-		var x = 99 < parseInt(x) || parseInt(x) < 0 ? 0 : x;
-		var y = 99 < parseInt(y) || parseInt(y) < 0 ? 0 : y;
+		var d = directions.indexOf(direction) === -1 ? 'N' : direction;
+		var x = 99 < parseInt(xPosition) || parseInt(xPosition) < 0 ? 0 : xPosition;
+		var y = 99 < parseInt(yPosition) || parseInt(yPosition) < 0 ? 0 : yPosition;
 
 		position = {
 			x: x || 0,
 			y: y || 0,
-			d: direction || 'N'
-		}
+			d: d
+		};
 	}
 
 	function reportPosition() {

@@ -2,7 +2,7 @@ describe('Pluto Rover', function() {
 
 	beforeEach(function() {
 		Rover.land();
-	})
+	});
 
 	describe('Rover initialize in the correct way', function() {
 
@@ -18,7 +18,7 @@ describe('Pluto Rover', function() {
 
 		it("it should be able to start from any position", function() {
 
-			Rover.land(101, 99, 'S')
+			Rover.land(101, 99, 'S');
 			var position = Rover.reportPosition();
 
 			expect(position.x).toBe(0);
@@ -29,7 +29,7 @@ describe('Pluto Rover', function() {
 
 		it("when landing position is not correct it should use default one", function() {
 
-			Rover.land(99, 124, 'G')
+			Rover.land(99, 124, 'G');
 			var position = Rover.reportPosition();
 
 			expect(position.x).toBe(99);
@@ -38,7 +38,7 @@ describe('Pluto Rover', function() {
 
 		});
 
-	})
+	});
 
 	describe('Rover can rotate', function() {
 
@@ -49,7 +49,7 @@ describe('Pluto Rover', function() {
 
 			expect(position.d).toBe('E');
 
-		})
+		});
 
 		it('it should be able to make full rotation', function() {
 
@@ -58,7 +58,7 @@ describe('Pluto Rover', function() {
 
 			expect(position.d).toBe('N');
 
-		})
+		});
 
 		it('it should be able to make full rotation in both directions', function() {
 
@@ -67,7 +67,7 @@ describe('Pluto Rover', function() {
 
 			expect(position.d).toBe('N');
 
-		})
+		});
 
 		it('it should be able to make crazy spins', function() {
 
@@ -76,7 +76,7 @@ describe('Pluto Rover', function() {
 
 			expect(position.d).toBe('S');
 
-		})
+		});
 
 	});
 
@@ -91,7 +91,7 @@ describe('Pluto Rover', function() {
 			expect(position.y).toBe(1);
 			expect(position.x).toBe(0);
 
-		})
+		});
 		it('it should be able to move backward facing N', function() {
 
 			Rover.getCommands('B');
@@ -100,7 +100,7 @@ describe('Pluto Rover', function() {
 			expect(position.y).toBe(99);
 			expect(position.x).toBe(0);
 
-		})
+		});
 
 
 		it('it should be able to move forward facing E', function() {
@@ -111,7 +111,7 @@ describe('Pluto Rover', function() {
 			expect(position.y).toBe(0);
 			expect(position.x).toBe(1);
 
-		})
+		});
 		it('it should be able to move backward facing E', function() {
 
 			Rover.getCommands('RB');
@@ -120,7 +120,7 @@ describe('Pluto Rover', function() {
 			expect(position.y).toBe(0);
 			expect(position.x).toBe(99);
 
-		})
+		});
 
 
 		it('it should be able to move forward facing S', function() {
@@ -131,7 +131,7 @@ describe('Pluto Rover', function() {
 			expect(position.y).toBe(1);
 			expect(position.x).toBe(0);
 
-		})
+		});
 		it('it should be able to move backward facing S', function() {
 
 			Rover.getCommands('RRB');
@@ -140,7 +140,7 @@ describe('Pluto Rover', function() {
 			expect(position.y).toBe(99);
 			expect(position.x).toBe(0);
 
-		})
+		});
 
 
 		it('it should be able to move backward facing W', function() {
@@ -151,7 +151,7 @@ describe('Pluto Rover', function() {
 			expect(position.y).toBe(0);
 			expect(position.x).toBe(99);
 
-		})
+		});
 		it('it should be able to move forward facing W', function() {
 
 			Rover.getCommands('LF');
@@ -160,7 +160,7 @@ describe('Pluto Rover', function() {
 			expect(position.y).toBe(0);
 			expect(position.x).toBe(1);
 
-		})
+		});
 
 	});
 
@@ -175,7 +175,7 @@ describe('Pluto Rover', function() {
 
 			expect(position.y).toBe(99);
 
-		})
+		});
 
 		it('it should adjust value after crossing maxY axis ', function() {
 
@@ -185,7 +185,7 @@ describe('Pluto Rover', function() {
 
 			expect(position.y).toBe(0);
 
-		})
+		});
 
 		it('it should adjust value after crossing minX axis ', function() {
 
@@ -194,7 +194,7 @@ describe('Pluto Rover', function() {
 
 			expect(position.x).toBe(99);
 
-		})
+		});
 
 		it('it should adjust value after crossing maxX axis ', function() {
 
@@ -204,7 +204,7 @@ describe('Pluto Rover', function() {
 
 			expect(position.x).toBe(0);
 
-		})
+		});
 
 	});
 
@@ -219,7 +219,7 @@ describe('Pluto Rover', function() {
 			commandRaport = Rover.getCommands(null);
 			expect(commandRaport).toBe(false);
 
-		})
+		});
 
 	});
 
