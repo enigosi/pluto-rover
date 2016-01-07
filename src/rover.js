@@ -43,10 +43,9 @@ var Rover = (function() {
 
 		var direction = directions.indexOf(position.d);
 
-		// -1/1 +4
-		direction += command === 'L' ? 3 : 5;
+		direction += command === 'L' ? -1 : 1;
 
-		direction = direction % 4;
+		direction = (direction + 4) % 4;
 
 		position.d = directions[direction];
 
@@ -56,8 +55,14 @@ var Rover = (function() {
 
 		var axis = ['N', 'S'].indexOf(position.d) === -1 ? 'x' : 'y';
 
-		var direction = command === 'F' ? 1 : -1;
+		var newPosition = position[axis];
 
-		position[axis] += direction;
+		newPosition += (command === 'F') ? 1 : -1;
+
+		newPosition = (newPosition + 100) % 100;
+
+		position[axis] = newPosition;
+
 	}
+
 })();
