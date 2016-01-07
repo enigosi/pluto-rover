@@ -151,7 +151,49 @@ describe('Pluto Rover', function() {
 
 		})
 
-
 	});
 
+
+
+	describe('Rover knows that map is wrapped', function() {
+
+		it('it should adjust value after crossing minY axis ', function() {
+
+			Rover.getCommands('B');
+			var position = Rover.reportPosition();
+
+			expect(position.y).toBe('99');
+
+		})
+
+		it('it should adjust value after crossing maxY axis ', function() {
+
+			Rover.land(56, 99, 'N');
+			Rover.getCommands('F');
+			var position = Rover.reportPosition();
+
+			expect(position.y).toBe('0');
+
+		})
+
+		it('it should adjust value after crossing minX axis ', function() {
+
+			Rover.getCommands('RB');
+			var position = Rover.reportPosition();
+
+			expect(position.x).toBe('99');
+
+		})
+
+		it('it should adjust value after crossing maxX axis ', function() {
+
+			Rover.land(99, 99, 'E');
+			Rover.getCommands('F');
+			var position = Rover.reportPosition();
+
+			expect(position.x).toBe('0');
+
+		})
+
+	});
 })
