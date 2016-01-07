@@ -33,6 +33,13 @@ var Rover = (function() {
 	}
 
 	function getCommands(commands) {
+
+		var allowedCommands = /^[FBLRfblr]+$/g;
+
+		if (!allowedCommands.test(commands)) return false;
+
+		commands = commands.toUpperCase();
+
 		Array.prototype.map.call(commands, processCommand);
 	}
 
