@@ -21,7 +21,7 @@ describe('Pluto Rover', function() {
 			Rover.land(101, 99, 'S')
 			var position = Rover.reportPosition();
 
-			expect(position.x).toBe(1);
+			expect(position.x).toBe(0);
 			expect(position.y).toBe(99);
 			expect(position.d).toBe('S');
 

@@ -2,7 +2,11 @@
 
 var Rover = (function() {
 
+	// current position
 	var position;
+
+	// helper
+	var directions = ['N', 'E', 'S', 'W'];
 
 	return  {
 		land: init,
@@ -12,6 +16,10 @@ var Rover = (function() {
 
 
 	function init(x, y, direction) {
+
+		var direction = directions.indexOf(direction) === -1 ? 'N' : direction;
+		var x = 99 < parseInt(x) || parseInt(x) < 0 ? 0 : x;
+		var y = 99 < parseInt(y) || parseInt(y) < 0 ? 0 : y;
 
 		position = {
 			x: x || 0,
@@ -38,8 +46,6 @@ var Rover = (function() {
 	}
 
 	function rotate(command) {
-
-		var directions = ['N', 'E', 'S', 'W'];
 
 		var direction = directions.indexOf(position.d);
 
