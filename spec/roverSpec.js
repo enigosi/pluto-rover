@@ -86,7 +86,7 @@ describe('Pluto Rover', function() {
 			Rover.getCommands('B');
 			var position = Rover.reportPosition();
 
-			expect(position.y).toBe(-1);
+			expect(position.y).toBe(99);
 			expect(position.x).toBe(0);
 
 		})
@@ -107,7 +107,7 @@ describe('Pluto Rover', function() {
 			var position = Rover.reportPosition();
 
 			expect(position.y).toBe(0);
-			expect(position.x).toBe(-1);
+			expect(position.x).toBe(99);
 
 		})
 
@@ -126,7 +126,7 @@ describe('Pluto Rover', function() {
 			Rover.getCommands('RRB');
 			var position = Rover.reportPosition();
 
-			expect(position.y).toBe(-1);
+			expect(position.y).toBe(99);
 			expect(position.x).toBe(0);
 
 		})
@@ -138,7 +138,7 @@ describe('Pluto Rover', function() {
 			var position = Rover.reportPosition();
 
 			expect(position.y).toBe(0);
-			expect(position.x).toBe(-1);
+			expect(position.x).toBe(99);
 
 		})
 		it('it should be able to move forward facing W', function() {
@@ -162,7 +162,7 @@ describe('Pluto Rover', function() {
 			Rover.getCommands('B');
 			var position = Rover.reportPosition();
 
-			expect(position.y).toBe('99');
+			expect(position.y).toBe(99);
 
 		})
 
@@ -172,7 +172,7 @@ describe('Pluto Rover', function() {
 			Rover.getCommands('F');
 			var position = Rover.reportPosition();
 
-			expect(position.y).toBe('0');
+			expect(position.y).toBe(0);
 
 		})
 
@@ -181,7 +181,7 @@ describe('Pluto Rover', function() {
 			Rover.getCommands('RB');
 			var position = Rover.reportPosition();
 
-			expect(position.x).toBe('99');
+			expect(position.x).toBe(99);
 
 		})
 
@@ -191,7 +191,7 @@ describe('Pluto Rover', function() {
 			Rover.getCommands('F');
 			var position = Rover.reportPosition();
 
-			expect(position.x).toBe('0');
+			expect(position.x).toBe(0);
 
 		})
 
